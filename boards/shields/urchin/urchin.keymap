@@ -106,16 +106,16 @@
             key-positions = <10 20>;
             bindings = <&kp ESC>;
         };
-        semi_o_bkspc {
+        semi_o_sqt {
             timeout-ms = <75>;
             key-positions = <9 19>;
-            bindings = <&kp BKSP>;
-        };
-        io_sqt {
-            timeout-ms = <30>;
-            key-positions = <18 19>;
             bindings = <&kp SQT>;
         };
+        // io_sqt {
+        //     timeout-ms = <30>;
+        //     key-positions = <18 19>;
+        //     bindings = <&kp SQT>;
+        // };
         l_homerow_command {
             timeout-ms = <40>;
             key-positions = <10 13>;
@@ -282,7 +282,7 @@
         sym {
             bindings = <
             AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)          AS(N0)
-            &kp ESC         &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       AS(LBKT)        AS(RBKT)
+            AS(GRAVE)       &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       AS(LBKT)        AS(RBKT)
             &shot 0 0       &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &kp ENTER
                                                                             &trans          &trans          &kp LSHFT       &mo NAV
             >;
@@ -290,7 +290,7 @@
 
         adj {
             bindings = <
-            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &none           &bt BT_CLR_ALL                                  &kp C_SLEEP     &trans          &trans          &kp C_BRI_DN    &kp C_BRI_UP
+            &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_CLR_ALL                                  &kp C_SLEEP     &trans          &trans          &kp C_BRI_DN    &kp C_BRI_UP
             &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
             &bootloader     &bnf            &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &bootloader
                                                                             &trans          &trans          &trans          &trans
