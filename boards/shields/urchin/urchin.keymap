@@ -16,7 +16,7 @@
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <250>;
+a           tapping_term_ms = <250>;
             // quick_tap_ms = <0>;
             require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
@@ -111,16 +111,26 @@
             key-positions = <9 19>;
             bindings = <&kp SQT>;
         };
+        e_comma_lbkt {
+            timeout-ms = <75>;
+            key-positions = <17 27>;
+            bindings = <AS(LBKT)>;
+        };
+        i_period-rbkt {
+            timeout-ms = <75>;
+            key-positions = <18 28>;
+            bindings = <AS(RBKT)>;
+        };
         // io_sqt {
         //     timeout-ms = <30>;
         //     key-positions = <18 19>;
         //     bindings = <&kp SQT>;
         // };
-        l_homerow_command {
-            timeout-ms = <40>;
-            key-positions = <10 13>;
-            bindings = <&sk LGUI>;
-        };
+        // l_homerow_command {
+        //     timeout-ms = <40>;
+        //     key-positions = <10 13>;
+        //     bindings = <&sk LGUI>;
+        // };
         l_sub_homerow_globe {
             timeout-ms = <75>;
             key-positions = <20 23>;
@@ -138,7 +148,7 @@
         };
         r_sub_homerow_lang {
             timeout-ms = <75>;
-            key-positions = <26 29>;
+            key-positions = <26 28>;
             bindings = <&kp LC(SPACE)>;
         };
         qp_close {
