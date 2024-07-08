@@ -93,6 +93,14 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
         };
+        s_ldr: left_thumb_shift_leader_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&leader>;
+        };
     };
 
     combos {
@@ -269,6 +277,61 @@
         };
     };
 
+    leader_sequences {
+        compatible = "zmk,leader-sequences";
+        r_j_rect_snap_left_twothirds {
+            key-positions = <11 5>;
+            bindings = <&kp LC(LA(E))>;
+            immediate-trigger;
+        };
+        r_l_rect_snap_left_third {
+            key-positions = <11 6>;
+            bindings = <&kp LC(LA(D))>;
+            immediate-trigger;
+        };
+        r_l_rect_snap_center_third {
+            key-positions = <11 7>;
+            bindings = <&kp LC(LA(R))>;
+            immediate-trigger;
+        };
+        r_l_rect_snap_right_third {
+            key-positions = <11 8>;
+            bindings = <&kp LC(LA(G))>;
+            immediate-trigger;
+        };
+        r_scl_rect_snap_right_twothirds {
+            key-positions = <11 9>;
+            bindings = <&kp LC(LA(T))>;
+            immediate-trigger;
+        };
+        r_m_rect_prev_disp {
+            key-positions = <11 15>;
+            bindings = <&kp LC(LA(LG(LEFT)))>;
+            immediate-trigger;
+        };
+        r_n_rect_snap_left_half {
+            key-positions = <11 16>;
+            bindings = <&kp LC(LA(LEFT))>;
+            immediate-trigger;
+        };
+        r_e_rect_snap_center_half {
+            key-positions = <11 17>;
+            bindings = <&kp LC(LA(X))>;
+            immediate-trigger;
+        };
+        r_i_rect_snap_right_half {
+            key-positions = <11 18>;
+            bindings = <&kp LC(LA(RIGHT))>;
+            immediate-trigger;
+        };
+        r_o_rect_next_disp {
+            key-positions = <11 19>;
+            bindings = <&kp LC(LA(LG(RIGHT)))>;
+            immediate-trigger;
+        };
+
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -277,7 +340,7 @@
             &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           AS(SEMI)
             &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &kp G                                           &kp M           &rhm LGUI N     &rhm LALT E     &rhm LCTRL I    &kp O
             &hrm MEH Z      &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           AS(COMMA)       AS(DOT)         AS(FSLH)
-                                                                            &sym_bspc 2 0   &smart_shift    &smart_shift    &lt NAV SPACE
+                                                                            &sym_bspc 2 0   &s_ldr LSFT 0   &smart_shift    &lt NAV SPACE
             >;
         };
 
@@ -327,4 +390,8 @@
 &sk {
     release-after-ms = <500>;
     quick-release;
+};
+
+&leader {
+    timeout-ms = <500>;
 };
